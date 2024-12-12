@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <!-- Corrected paths for the FontAwesome scripts -->
+  <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+  <script defer src="./assets/fontawesome/js/solid.min.js"></script>
+  <script>
+    window.onload = () => {
+      const mobileMenuIcon = document.getElementById("mobile-menu-button");
+      mobileMenuIcon.addEventListener("click", () => {
+        if(mobileMenuIcon.classList.contains("open")){
+          mobileMenuIcon.classList.remove("open");
+        }else{
+          mobileMenuIcon.classList.add("open");
+        }
+      });
+
+      const financeMenuItem = document.getElementById("finance-menu-item");
+      financeMenuItem.addEventListener("click", () => {
+        if(financeMenuItem.classList.contains("open")){
+          financeMenuItem.classList.remove("open");
+        }else{
+          financeMenuItem.classList.add("open");
+        }
+      });
+
+      const previousButton = document.getElementById("previous");
+      const nextButton = document.getElementById("next");
+      const carousel = document.getElementById("carousel")
+      previousButton.addEventListener("click", () => {
+        const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
+        carousel.scrollLeft = carousel.scrollLeft - itemWidth;
+      });
+      nextButton.addEventListener("click", () => {
+        const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
+        carousel.scrollLeft = carousel.scrollLeft + itemWidth;
+      });
+
+      const darkModeToggle = document.getElementById("dark-mode-toggle");
+      darkModeToggle.addEventListener("click", () => {
+        if(document.body.classList.contains("dark")){
+          document.body.classList.remove("dark");
+        }else{
+          document.body.classList.add("dark");
+        }
+      });
+    };
+  </script>
+</head>
+<body class="dark">
+  <main class="pb-40 bg-zinc-200 dark:bg-zinc-950 text-zinc-950 dark:text-zinc-200">
+    <header>
+      <button id="dark-mode-toggle" class="fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-950 dark:bg-zinc-200 text-zinc-200 dark:text-zinc-950 p-2 text-3xl z-20">
+        <i class="fa-solid fa-sun dark:hidden"></i>
+        <i class="fa-solid fa-moon hidden dark:inline"></i>
+      </button>
+      <nav class="sticky top-0 flex bg-gradient-to-r from-red-500 to-teal-500 p-2 z-10">
+        <div class="flex items-center w-full justify-between">
+          <!-- Logo and Text -->
+          <div class="flex items-center gap-2">
+            <img src="./assets/images/logo-inverted.png" width="50" alt="Logo" />
+            <div class="font-bold text-2xl">
+              BO DOES<span class="text-teal-950"> IT</span>
+            </div>
+          </div>
+      
+          <!-- Mobile App (Hamburger Menu) -->
+          <div class="block md:hidden ml-auto pr-4 cursor-pointer">
+            <button id="mobile-menu-button" class="group peer">
+              <div class="top-0 group-open:rotate-45 group-open:top-2 relative transition-all bg-zinc-200 rounded-full w-8 h-1 group-open:"></div>
+              <div class="opacity-100 transition-all group-open:opacity-0 bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
+              <div class="top-0 group-open:-rotate-45 group-open:-top-2 relative transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
+            </button>
+            <div class="absolute top-[62px] bg-gradient-to-r from-red-500 to-teal-500 peer-open:block hidden w-full left-0">
+              <div class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-blue-100 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <span>Home</span>
+              </div>
+              <div class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-blue-100 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <span>Merchandise</span>
+              </div>
+              <div 
+              id ="finance-menu-item"
+              class="group relative h-full cursor-pointer text-blue-100 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <div class="p-4 text-center font-bold">Finance</div>
+                  <div class="hidden group-open:block">
+                    <div class="text-center p-4 hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
+                      <span> Mortgage Calculator</span>
+                    </div>
+                    <div class="text-center p-4 hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
+                      <span> Amortization Table</span>
+                    </div>
+                  </div>
+              </div>
+              <div class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-blue-100 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <span>Support</span>
+              </div>
+            </div>
+          </div>
+      
+          <div class="flex-1 hidden md:flex items-center justify-end">
+            <!-- Web App -->
+            <div class="menu-item group">
+              <span>Home</span>
+            </div>
+            <div class="menu-item group">
+              <span>Merchandise</span>
+            </div>
+            <div class="menu-item group">
+              <span>Finance</span>
+              <div class="hidden absolute top-full right-0 whitespace-nowrap bg-teal-500 rounded-b-md text-right group-hover:block">
+                <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
+                  <span> Mortgage Calculator</span>
+                </div>
+                <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
+                  <span> Amortization Table</span>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item group">
+              <span>Support</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+      style="background-image: url('./assets/images/fire.jpg'); background-size: 110%; background-repeat: no-repeat;"
+      class="bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(120vh-200px)] min-h-[400px]">
+      <!-- Logo and Title Text (blurred background) -->
+        <div class="bg-white/30 py-1 px-4 rounded-xl backdrop-blur-md mt-[-90px]">
+          <!-- Logo Image -->
+          <div class="relative flex items-center justify-center">
+            <img src="./assets/images/logo-inverted.png" class="max-w-[300px] h-auto" />
+            <div class="flex items-center justify-center mt-[100px] mb-5">
+              <!-- red Circle -->
+              <div class="absolute inset-0 flex items-center justify-center mt-[140px]">
+                <div class="h-20 w-20 rounded-full bg-red-500 flex items-center justify-center gap-2 -ml-1/16 -mt-1/16">
+                  <!-- Moving Bars -->
+                  <div class="h-4 w-1 bg-red-300 rounded-full animate-wavey animation-delay-[50ms]"></div>
+                  <div class="h-6 w-1 bg-red-200 rounded-full animate-wavey animation-delay-[300ms]"></div>
+                  <div class="h-8 w-1 bg-red-100 rounded-full animate-wavey animation-delay-[100ms]"></div>
+                  <div class="h-6 w-1 bg-red-200 rounded-full animate-wavey animation-delay-300"></div>
+                  <div class="h-4 w-1 bg-red-300 rounded-full animate-wavey animation-delay-[25ms]"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Title Text -->
+          <div class="text-5xl font-bold text-center">
+            BO DOES<span class="text-teal-950"> IT</span>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+    <!-- Body of the Home Page Text -->
+    <div class="max-w-screen-lg mx-auto mt-20 text-zinc-950 dark:text-zinc-200">
+      <h2><span class="text-transparent bg-gradient-to-r from-rose-500 via-teal-400 to-cyan-500 bg-clip-text">Playlists</span></h2>
+      <p>
+        Thank You for swinging through the web page. I hope you find This content useful as much as I have. If you're interested in looking at one of my recent youtube videos check it out down below.
+      </p>
+      <div class="flex"> 
+        <!-- Left Arrow -->
+        <div id="previous" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
+          <i class="fas fa-angle-left"></i>
+        </div>
+          <!-- Horizontal Scrolling Section -->
+        <div id="carousel" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
+          <!-- Finance Section -->
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/finance.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+            <h5 class="mt-2">Finance</h5>
+            <h6>HSA or FSA? 401(k) or Stock Market?</h6>
+          </div>
+
+          <!-- Technology -->
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/technology.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+            <h5 class="mt-2">Technology</h5>
+            <h6>Let's Code Together!</h6>
+          </div>
+
+          <!-- Sports -->
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/sports.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+            <h5 class="mt-2">Sports</h5>
+            <h6>60 yard field goal? Hole in One?</h6>
+          </div>
+
+          <!-- Food -->
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/food.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+            <h5 class="mt-2">Food</h5>
+            <h6>Can he eat 3 dozen donuts in 3 minutes?</h6>
+          </div>
+
+          <!-- Home Improvement -->
+          <div class="min-w-[80%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/home.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+            <h5 class="mt-2">Home Improvement</h5>
+            <h6>Do you want to improve your house but don't know how to start?</h6>
+          </div>
+        </div>
+      <!-- Right Arrow -->
+      <div id="next" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
+        <i class="fas fa-angle-right"></i>
+      </div>
+      </div>
+      
+    </div>
+
+      <!-- Subtitle and Email Input Section (Separate from the blurred background) -->
+      <div class="mt-6 flex flex-col items-center w-full px-4 pb-2 space-y-3">
+        <!-- Subtitle Text -->
+        <div class="text-sm font-bold text-center dark:text-zinc-200">
+          Would you like to up to date with the latest information?
+        </div>
+      
+        <!-- Email Input -->
+        <form 
+        type="submit"
+        class="flex justify-center w-full">
+          <input
+            type="email"
+            placeholder="Email"
+            class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-teal-950 placeholder-zinc-500 caret-teal-500 outline-teal-500 focus:outline"/>
+          <button class="cursor-pointer rounded-sm bg-teal-500 py-2 px-4 font-bold transition-colors hover:bg-teal-950 hover:shadow-lg hover:shadow-black/20"> 
+          Subscribe
+          </button>
+        </form> 
+        <!-- Mortgage Table on Home Page -->
+        <h2 class="mt-20">
+          Mortgage
+        </h2>
+        <p> Your next payment of $_ is due on :_date_ </p>
+        <div class="rounded-lg relative mt-5 w-3/4 bg-zinc-800 py-4 px-2 text-zinc-200">
+          <!-- Gradient Bar: Positioned correctly -->
+          <div class="absolute top-0 left-1/2 w-4 -ml-2 h-full bg-gradient-to-b from-sky-500 via-cyan-500 to-teal-500 z-10">
+            <div class="sticky top-1/2">
+              <div class=" relative size-4">
+                <div class="size-4 animate-ping rounded-full bg-cyan-500 opacity-75 absolute"> </div>
+                <div class="bg-rose-500 rounded-full relative size-4"> </div>
+              </div>
+            </div>
+          </div>
+          <!-- Content Area with Flexbox for Left / Right positioning -->
+          <div class="grid grid-cols-2 gap-8 w-full">
+            <!-- Left Side: '1st July' text next to the gradient bar -->
+            <div class="flex w-full pl-[20px]">
+              <div class="bg-zinc-900 rounded-lg p-1 w-full max-w-[calc(100%-10px)]">
+                <h4 class="my-4">1st July</h4>
+              </div>
+            </div>
+
+            <!-- Right Side: Keep Empty for second occurrence -->
+            <div></div>
+        
+            <!-- Band Info: Right Side Content -->
+            <div class="text-right pr-[20px]">
+              <div class="font-bold">Band Name</div>
+              <div class="text-zinc-400">6PM - Somewhere</div>
+            </div>
+
+            <!-- Right Side: Fourth Div -->
+             <div></div>
+            <!-- Left Side: Fifth Div -->
+             <div></div>
+
+            <!-- Right Side: Sixth Div -->
+            <div class="text-left pl-[20px]">
+              <div class="font-bold">Band Name</div>
+              <div class="text-zinc-400"> 6PM - Somewhere</div>
+            </div>
+            <!-- Left Side: '1st July' text next to the gradient bar -->
+            <div class="flex w-full pl-[20px]">
+              <div class="bg-zinc-900 rounded-lg p-1 w-full max-w-[calc(100%-10px)]">
+                <h4 class="my-4">1st July</h4>
+              </div>
+            </div>
+
+            <!-- Right Side: Keep Empty for second occurrence -->
+            <div></div>
+
+            <!-- Left Side: Third Div -->
+            <div class="text-right pr-[20px]">
+              <div class="font-bold">Band Name</div>
+              <div class="text-zinc-400"> 6PM - Somewhere</div>
+            </div>
+
+            <!-- Right Side: Fourth Div -->
+             <div></div>
+            <!-- Left Side: Fifth Div -->
+             <div></div>
+
+            <!-- Right Side: Sixth Div -->
+            <div class="text-left pl-[20px]">
+              <div class="font-bold">Band Name</div>
+              <div class="text-zinc-400"> 6PM - Somewhere</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Amortization Table on Home Page -->
+         <div class="mx-3 table w-3/4 border border-zinc-500 border-collapse">
+          <h2 class="mt-5 text-center justify-center">
+            Amortization
+           </h2>
+          <table class="mt-5 table w-full border border-zinc-500 border-collapse">
+            <thead class="text-lg font-bold">
+              <td class="border border-zinc-500 p-3">Year</td>
+              <td class="border border-zinc-500 p-3">Principal</td>
+              <td class="border border-zinc-500 p-3">Interest</td>
+              <td class="border border-zinc-500 p-3">Extra Payment</td>
+              <td class="border border-zinc-500 p-3">Balance</td>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-zinc-500 py-2 px-3">1</td>
+                <td class="border border-zinc-500 py-2 px-3">$ Price</td>
+                <td class="border border-zinc-500 py-2 px-3">$ Price</td>
+                <td class="border border-zinc-500 py-2 px-3">$ 0</td>
+                <td class="border border-zinc-500 py-2 px-3">$ Total</td>
+              </tr>
+              <tr>
+                <td class="border border-zinc-500 py-2 px-3">2</td>
+                <td class="border border-zinc-500 py-2 px-3">$ Price + 1</td>
+                <td class="border border-zinc-500 py-2 px-3">$ Price - 1</td>
+                <td class="border border-zinc-500 py-2 px-3">$ 0</td>
+                <td class="border border-zinc-500 py-2 px-3">$ Total - 1</td>
+              </tr>
+            </tbody>
+            <caption class="caption-bottom mt-5 mb-5">
+              You will pay _total_ in _year_ years and _month_ months.
+            </caption>
+          </table>
+        </div>
+      </div> 
+      <!-- Bottom Gradient Section -->
+      <section class="py-40 px-10 flex flex-col rounded-tlbr-full items-center justify-center bg-gradient-to-br from-rose-500 to-cyan-500">
+        <button class="btn btn-rose-500"> Button </button>
+      </section>
+      
+  </main>
+</body>
+</html>
