@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "devDependencies": {
-    "tailwindcss": "^3.4.16",
+  "dependencies": {
     "strapi": "^4.10.2" 
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.16"
   }
 }
