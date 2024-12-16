@@ -1,20 +1,25 @@
-// import type { Core } from '@strapi/strapi';
+import type { Core } from '@strapi/strapi';
 
 export default {
-  /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   *
-   * This gives you an opportunity to extend code.
-   */
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+  bootstrap({ strapi }: { strapi: Core.Strapi }) {
+    const userModel = strapi.plugin('users-permissions')?.contentTypes?.user;
 
-  /**
-   * An asynchronous bootstrap function that runs before
-   * your application gets started.
-   *
-   * This gives you an opportunity to set up your data model,
-   * run jobs, or perform some special logic.
-   */
-  bootstrap(/* { strapi }: { strapi: Core.Strapi } */) {},
+    if (userModel && userModel.schema) {
+      // Add custom fields safely to the schema attributes
+      Object.assign(userModel.schema.attributes, {
+        totpSecret: {
+          type: 'string',
+          private: true, // Not exposed in API responses
+          configurable: false,
+        },
+        enableTotp: {
+          type: 'boolean',
+          default: false,
+          configurable: false,
+        },
+      });
+    } else {
+      strapi.log.error('Unable to load users-permissions user model.');
+    }
+  },
 };
