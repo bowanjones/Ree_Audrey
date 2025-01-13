@@ -39,6 +39,18 @@
         carousel.scrollLeft = carousel.scrollLeft + itemWidth;
       });
 
+      const previousTeamButton = document.getElementById("previousTeam");
+      const nextTeamButton = document.getElementById("nextTeam");
+      const carouselTeam = document.getElementById("carouselTeam")
+      previousTeamButton.addEventListener("click", () => {
+        const itemWidth = carouselTeam.getElementsByTagName("div")[0].clientWidth;
+        carouselTeam.scrollLeft = carouselTeam.scrollLeft - itemWidth;
+      });
+      nextTeamButton.addEventListener("click", () => {
+        const itemWidth = carouselTeam.getElementsByTagName("div")[0].clientWidth;
+        carouselTeam.scrollLeft = carouselTeam.scrollLeft + itemWidth;
+      });
+
       const darkModeToggle = document.getElementById("dark-mode-toggle");
       darkModeToggle.addEventListener("click", () => {
         if(document.body.classList.contains("dark")){
@@ -105,11 +117,11 @@
                       <span> Technology</span>
                     </div>
                   </div>
-                </div>
               </div>
               <div class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-blue-100 hover:text-zinc-200 transition-colors hover:bg-white/10">
                 <span>Events</span>
               </div>
+            </div>
             </div>
           </div>
       
@@ -188,11 +200,11 @@
       </p>
       <div class="flex"> 
         <!-- Left Arrow -->
-        <div id="previous" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
+        <div id="previousTeam" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
           <i class="fas fa-angle-left"></i>
         </div>
           <!-- Horizontal Scrolling Section -->
-        <div id="carousel" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
+        <div id="carouselTeam" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
 
           <!-- Person 1 -->
           <div class="min-w-[80%] md:min-w-[40%]">
@@ -216,7 +228,7 @@
           </div>
         </div>
       <!-- Right Arrow -->
-      <div id="next" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
+      <div id="nextTeam" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
         <i class="fas fa-angle-right"></i>
       </div>
       </div>
