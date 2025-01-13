@@ -1,15 +1,15 @@
 {
   "name": "tailwind-course-starter",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "tw:build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
-    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "tailwindcss": "^3.4.16",
-    "postcss": "^8.4.12",
-    "autoprefixer": "^10.4.4"
-  },
-  "license": "ISC"
+    "tailwindcss": "^3.4.16"
+  }
 }
