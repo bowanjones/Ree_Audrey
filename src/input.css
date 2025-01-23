@@ -32,3 +32,7 @@
         @apply relative flex h-full items-center p-4 cursor-pointer font-bold text-green-800 hover:bg-white/10 hover:text-zinc-200 transition-colors ease-in-out whitespace-nowrap
     }
 }
+
+#carousel, #carouselTeam {
+    overflow-x: hidden;
+  }
