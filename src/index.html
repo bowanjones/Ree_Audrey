@@ -39,17 +39,7 @@
         carousel.scrollLeft = carousel.scrollLeft + itemWidth;
       });
 
-      const previousTeamButton = document.getElementById("previousTeam");
-      const nextTeamButton = document.getElementById("nextTeam");
-      const carouselTeam = document.getElementById("carouselTeam")
-      previousTeamButton.addEventListener("click", () => {
-        const itemWidth = carouselTeam.getElementsByTagName("div")[0].clientWidth;
-        carouselTeam.scrollLeft = carouselTeam.scrollLeft - itemWidth;
-      });
-      nextTeamButton.addEventListener("click", () => {
-        const itemWidth = carouselTeam.getElementsByTagName("div")[0].clientWidth;
-        carouselTeam.scrollLeft = carouselTeam.scrollLeft + itemWidth;
-      });
+
 
       const darkModeToggle = document.getElementById("dark-mode-toggle");
       darkModeToggle.addEventListener("click", () => {
