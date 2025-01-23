@@ -23,12 +23,10 @@
       const carousel = document.getElementById("carousel")
       previousButton.addEventListener("click", () => {
         const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
-        console.log("Previous clicked");
         carousel.scrollLeft = carousel.scrollLeft - itemWidth;
       });
       nextButton.addEventListener("click", () => {
         const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
-        console.log("Next clicked");
         carousel.scrollLeft = carousel.scrollLeft + itemWidth;
       });
 
