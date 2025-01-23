@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
-  <!-- Corrected paths for the FontAwesome scripts -->
+  <!-- Paths for the FontAwesome scripts -->
   <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
   <script defer src="./assets/fontawesome/js/solid.min.js"></script>
   <script>
@@ -69,13 +69,12 @@
         <i class="fa-solid fa-sun dark:hidden"></i>
         <i class="fa-solid fa-moon hidden dark:inline"></i>
       </button>
-      <nav class="sticky top-0 flex bg-gradient-to-r from-red-500 to-zinc-500 p-2 z-10">
+      <nav class="sticky top-0 flex bg-gradient-to-r from-zinc-900 via-zinc-600 to-zinc-200 p-2 z-10">
         <div class="flex items-center w-full justify-between">
           <!-- Logo and Text -->
-          <div class="flex items-center gap-2">
-            <img src="./assets/images/logo-inverted.png" width="50" alt="Logo" />
+          <div class="flex items-center gap-2 pl-2">
             <div class="font-bold text-2xl">
-              AUD REE<span class="text-zinc-950"> CONSULTING</span>
+              REVIVAL<span class="text-green-800"> CONSULTING</span>
             </div>
           </div>
       
@@ -86,352 +85,204 @@
               <div class="opacity-100 transition-all group-open:opacity-0 bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
               <div class="top-0 group-open:-rotate-45 group-open:-top-2 relative transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
             </button>
-            <div class="absolute top-[62px] bg-gradient-to-r from-red-500 to-zinc-500 peer-open:block hidden w-full left-0">
-              <div class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-blue-100 hover:text-zinc-200 transition-colors hover:bg-white/10">
-                <span>Home</span>
-              </div>
-              <div class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-blue-100 hover:text-zinc-200 transition-colors hover:bg-white/10">
-                <span>Contact</span>
-              </div>
-              <div 
-              id ="marketing-menu-item"
-              class="group relative h-full cursor-pointer text-blue-100 hover:text-zinc-200 transition-colors hover:bg-white/10">
-                <div class="p-4 text-center font-bold">Business</div>
-                  <div class="hidden group-open:block">
-                    <div class="text-center p-4 hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                      <span> Marketing</span>
-                    </div>
-                    <div class="text-center p-4 hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                      <span> Events</span>
-                    </div>
-                    <div class="text-center p-4 hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                      <span> Nonprofit</span>
-                    </div>
-                    <div class="text-center p-4 hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100">  
-                      <span> Corporate Strategy</span>
-                    </div>
-                    <div class="text-center p-4 hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                      <span> Grants</span>
-                    </div>
-                    <div class="text-center p-4 hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                      <span> Technology</span>
-                    </div>
-                  </div>
-              </div>
-              <div class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-blue-100 hover:text-zinc-200 transition-colors hover:bg-white/10">
-                <span>Events</span>
-              </div>
-            </div>
+            <div class="absolute top-[62px] bg-gradient-to-r from-green-800 to-zinc-500 peer-open:block hidden w-full left-0">
+              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-zinc-800 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <a href="#Home">
+                  <span>Home</span>
+                </a>
+              </section>
+              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-zinc-800 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <a href="#About-Us">
+                  <span>About Us</span>
+                </a>
+              </section>
+              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-zinc-800 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <a href="#Business">
+                  <span>Business</span>
+                </a>
+              </section>
+              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-zinc-800 hover:text-zinc-200 transition-colors hover:bg-white/10">
+                <a href="#Contact-Us">
+                  <span>Contact Us</span>
+                </a>
+              </section>
             </div>
           </div>
       
           <div class="flex-1 hidden md:flex items-center justify-end">
+            
+            
             <!-- Web App -->
-            <div class="menu-item group">
-              <span>Home</span>
-            </div>
-            <div class="menu-item group">
-              <span>Contact</span>
-            </div>
-            <div class="menu-item group">
-              <span>Business</span>
-              <div class="hidden absolute top-full right-0 whitespace-nowrap bg-zinc-500 rounded-b-md text-right group-hover:block">
-                <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                  <span> Marketing</span>
-                </div>
-                <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                  <span> Events</span>
-                </div>
-                <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                  <span> Nonprofit</span>
-                </div>
-                <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                  <span> Corporate Strategy</span>
-                </div>
-                <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                  <span> Grants</span>
-                </div>
-                <div class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-blue-100"> 
-                  <span> Technology</span>
-                </div>
-              </div>
-            </div>
-            <div class="menu-item group">
-              <span>Events</span>
-            </div>
+            <section class="menu-item group">
+              <a href="#Home">
+                <span>Home</span>
+              </a>
+            </section>
+            <section class="menu-item group">
+              <a href="#About-Us">
+                <span>About Us</span>
+              </a>
+            </section>
+            <section class="menu-item group">
+              <a href="#Business">
+                <span>Business</span>
+              </a>
+            </section>
+            <section class="menu-item group">
+              <a href="#Contact-Us">
+                <span>Contact Us</span>
+              </a>
+            </section>
           </div>
         </div>
       </nav>
-      <div
-      style="background-image: url('./assets/images/fire.jpg'); background-size: 110%; background-repeat: no-repeat;"
-      class="bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(120vh-200px)] min-h-[400px]">
-      <!-- Logo and Title Text (blurred background) -->
-        <div class="bg-white/30 py-1 px-4 rounded-xl backdrop-blur-md mt-[-90px]">
-          <!-- Logo Image -->
-          <div class="relative flex items-center justify-center">
-            <img src="./assets/images/logo-inverted.png" class="max-w-[300px] h-auto" />
-            <div class="flex items-center justify-center mt-[100px] mb-5">
-              <!-- red Circle -->
-              <div class="absolute inset-0 flex items-center justify-center mt-[140px]">
-                <div class="h-20 w-20 rounded-full bg-red-500 flex items-center justify-center gap-2 -ml-1/16 -mt-1/16">
-                  <!-- Moving Bars -->
-                  <div class="h-4 w-1 bg-red-300 rounded-full animate-wavey animation-delay-[50ms]"></div>
-                  <div class="h-6 w-1 bg-red-200 rounded-full animate-wavey animation-delay-[300ms]"></div>
-                  <div class="h-8 w-1 bg-red-100 rounded-full animate-wavey animation-delay-[100ms]"></div>
-                  <div class="h-6 w-1 bg-red-200 rounded-full animate-wavey animation-delay-300"></div>
-                  <div class="h-4 w-1 bg-red-300 rounded-full animate-wavey animation-delay-[25ms]"></div>
-                </div>
-              </div>
+      <section id="Home"
+          style="background-image: url('./assets/images/events.jpg'); background-size: 100%; background-repeat: no-repeat;"
+          class="bg-cover bg-center bg-fixed h-[calc(120vh-200px)] min-h-[300px] relative">
+        <!-- Title Text -->
+        <!-- <div class="text-5xl font-bold text-zinc-950 absolute top-6 left-1/2 transform -translate-x-1/2 pr-8">
+          REVIVAL<span class="text-green-800"> CONSULTING</span>
+        </div> -->
+      </section>
+
+      
+    
+      <!-- Meet the Team -->
+      <section id="About-Us"></section>
+      <section class="max-w-screen-lg mx-auto mt-20 text-zinc-950 dark:text-zinc-200">
+        <h2><span class="text-transparent bg-gradient-to-r from-green-800 via-zinc-400 to-orange-200 bg-clip-text">Meet the Team</span></h2>
+        <p>
+          Thank You for your interest in us! We are happy to help however we can and would love the opportunity to work with you. Learn more about us below.
+        </p>
+        <div class="flex"> 
+          <!-- Left Arrow -->
+          <div id="previousTeam" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
+            <i class="fas fa-angle-left"></i>
+          </div>
+            <!-- Horizontal Scrolling Section -->
+          <div id="carouselTeam" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
+
+            <!-- Person 1 -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/aud.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Audrey</h5>
+              <h6>If anyone can do it, Audrey can!</h6>
+            </div>
+
+            <!-- Person 2 -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/ree.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Reeanna</h5>
+              <h6>Nonprofit? Corporate Strategy? Events? She has done it all!</h6>
+            </div>
+
+            <!-- Person 3 -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/bo.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Bowan</h5>
+              <h6>6'5"?</h6>
             </div>
           </div>
-          <!-- Title Text -->
-          <div class="text-5xl font-bold text-center">
-            AUD REE<span class="text-zinc-950"> CONSULTING</span>
+
+          <!-- Right Arrow -->
+          <div id="nextTeam" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
+            <i class="fas fa-angle-right"></i>
           </div>
         </div>
-      </div>
       
-    </header>
-    <!-- Meet the Team -->
-    <div class="max-w-screen-lg mx-auto mt-20 text-zinc-950 dark:text-zinc-200">
-      <h2><span class="text-transparent bg-gradient-to-r from-rose-500 via-zinc-400 to-cyan-500 bg-clip-text">Meet the Team</span></h2>
-      <p>
-        Thank You for your interest in us! We are happy to help however we can and would love the opportunity to work with you. Learn more about us below.
-      </p>
-      <div class="flex"> 
-        <!-- Left Arrow -->
-        <div id="previousTeam" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
-          <i class="fas fa-angle-left"></i>
+      </section>
+
+      <!-- Business Opportunities -->
+      <section id="Business"></section>
+      <section class="max-w-screen-lg mx-auto mt-20 text-zinc-950 dark:text-zinc-200">
+        <h2><span class="text-transparent bg-gradient-to-r from-green-800 via-zinc-400 to-orange-200 bg-clip-text">Business Opportunities</span></h2>
+        <p>
+          Thank You for your interest in us! We are happy to help however we can and would love the opportunity to work with you. Learn more about our business specialties below.
+        </p>
+        <div class="flex"> 
+          <!-- Left Arrow -->
+          <div id="previous" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
+            <i class="fas fa-angle-left"></i>
+          </div>
+            <!-- Horizontal Scrolling Section -->
+          <div id="carousel" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
+            <!-- Marketing Section -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/marketing.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Marketing</h5>
+              <h6>Need help with your marketing campaign or media posts?</h6>
+            </div>
+
+            <!-- Events -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/events.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Events</h5>
+              <h6>Need help planning a large event?</h6>
+            </div>
+
+            <!-- Nonprofit -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/nonprofit.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Nonprofit</h5>
+              <h6>We're here for you!</h6>
+            </div>
+
+            <!-- Corporate Strategy -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/corporate strategy.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Corporate Strategy</h5>
+              <h6>Let us help you achieve your goals!</h6>
+            </div>
+
+            <!-- Grants -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/grants.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Grants</h5>
+              <h6>Need funding but don't know where to begin?</h6>
+            </div>
+
+            <!-- Technology -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/technology.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Technology</h5>
+              <h6>Want a website but don't know how to start?</h6>
+            </div>
+          </div>
+          <!-- Right Arrow -->
+          <div id="next" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
+            <i class="fas fa-angle-right"></i>
+          </div>  
         </div>
-          <!-- Horizontal Scrolling Section -->
-        <div id="carouselTeam" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
-
-          <!-- Person 1 -->
-          <div class="min-w-[80%] md:min-w-[40%]">
-            <div style="background-image: url('./assets/images/aud.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-            <h5 class="mt-2">Audrey</h5>
-            <h6>If anyone can do it, Audrey can!</h6>
-          </div>
-
-          <!-- Person 2 -->
-          <div class="min-w-[80%] md:min-w-[40%]">
-            <div style="background-image: url('./assets/images/ree.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-            <h5 class="mt-2">Reeanna</h5>
-            <h6>Nonprofit? Corporate Strategy? Events? She has done it all!</h6>
-          </div>
-
-          <!-- Person 3 -->
-          <div class="min-w-[80%] md:min-w-[40%]">
-            <div style="background-image: url('./assets/images/bo.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-            <h5 class="mt-2">Bowan</h5>
-            <h6>6'5"?</h6>
-          </div>
-        </div>
-      <!-- Right Arrow -->
-      <div id="nextTeam" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
-        <i class="fas fa-angle-right"></i>
-      </div>
-      </div>
-      
-    </div>
-    <!-- Body of the Home Page Text -->
-    <div class="max-w-screen-lg mx-auto mt-20 text-zinc-950 dark:text-zinc-200">
-      <h2><span class="text-transparent bg-gradient-to-r from-rose-500 via-zinc-400 to-cyan-500 bg-clip-text">Business Opportunities</span></h2>
-      <p>
-        Thank You for your interest in us! We are happy to help however we can and would love the opportunity to work with you. Learn more about our business specialties below.
-      </p>
-      <div class="flex"> 
-        <!-- Left Arrow -->
-        <div id="previous" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
-          <i class="fas fa-angle-left"></i>
-        </div>
-          <!-- Horizontal Scrolling Section -->
-        <div id="carousel" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
-          <!-- Marketing Section -->
-          <div class="min-w-[80%] md:min-w-[40%]">
-            <div style="background-image: url('./assets/images/marketing.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-            <h5 class="mt-2">Marketing</h5>
-            <h6>Need help with your marketing campaign or media posts?</h6>
-          </div>
-
-          <!-- Events -->
-          <div class="min-w-[80%] md:min-w-[40%]">
-            <div style="background-image: url('./assets/images/events.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-            <h5 class="mt-2">Events</h5>
-            <h6>Need help planning a large event?</h6>
-          </div>
-
-          <!-- Nonprofit -->
-          <div class="min-w-[80%] md:min-w-[40%]">
-            <div style="background-image: url('./assets/images/nonprofit.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-            <h5 class="mt-2">Nonprofit</h5>
-            <h6>We're here for you!</h6>
-          </div>
-
-          <!-- Corporate Strategy -->
-          <div class="min-w-[80%] md:min-w-[40%]">
-            <div style="background-image: url('./assets/images/corporate strategy.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-            <h5 class="mt-2">Corporate Strategy</h5>
-            <h6>Let us help you achieve your goals!</h6>
-          </div>
-
-          <!-- Grants -->
-          <div class="min-w-[80%] md:min-w-[40%]">
-            <div style="background-image: url('./assets/images/grants.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-            <h5 class="mt-2">Grants</h5>
-            <h6>Need funding but don't know where to begin?</h6>
-          </div>
-
-          <!-- Technology -->
-          <div class="min-w-[80%] md:min-w-[40%]">
-            <div style="background-image: url('./assets/images/technology.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-            <h5 class="mt-2">Technology</h5>
-            <h6>Want a website but don't know how to start?</h6>
-          </div>
-        </div>
-      <!-- Right Arrow -->
-      <div id="next" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
-        <i class="fas fa-angle-right"></i>
-      </div>
-      </div>
-      
-    </div>
+      </section>
 
       <!-- Subtitle and Email Input Section (Separate from the blurred background) -->
-      <div class="mt-6 flex flex-col items-center w-full px-4 pb-2 space-y-3">
-        <!-- Subtitle Text -->
-        <div class="text-sm font-bold text-center dark:text-zinc-200">
-          Would you like to connect?
-        </div>
-      
-        <!-- Email Input -->
-        <form 
-        type="submit"
-        class="flex justify-center w-full">
-          <input
-            type="email"
-            placeholder="Email"
-            class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-zinc-950 placeholder-zinc-500 caret-zinc-500 outline-zinc-500 focus:outline"/>
-          <button class="cursor-pointer rounded-sm bg-zinc-500 py-2 px-4 font-bold transition-colors hover:bg-zinc-950 hover:shadow-lg hover:shadow-black/20"> 
-          Subscribe
-          </button>
-        </form> 
-        <!-- Events Calendar on Home Page -->
-        <h2 class="mt-20">
-          Upcoming Events
-        </h2>
-        <p> To add your event to our calendar please connect above! </p>
-        <div class="rounded-lg relative mt-5 w-3/4 bg-zinc-800 py-4 px-2 text-zinc-200">
-          <!-- Gradient Bar: Positioned correctly -->
-          <div class="absolute top-0 left-1/2 w-4 -ml-2 h-full bg-gradient-to-b from-sky-500 via-cyan-500 to-zinc-500 z-10">
-            <div class="sticky top-1/2">
-              <div class=" relative size-4">
-                <div class="size-4 animate-ping rounded-full bg-cyan-500 opacity-75 absolute"> </div>
-                <div class="bg-rose-500 rounded-full relative size-4"> </div>
-              </div>
+      <section id="Contact-Us">
+        <!-- Bottom Gradient Section -->
+        <section class="py-40 px-10 flex flex-col rounded-tlbr-full items-center justify-center bg-gradient-to-br from-green-800 to-orange-200">
+          <button class="btn btn-green-800"> Subscribe to Emails </button>
+          <div class="mt-6 flex flex-col items-center w-full px-4 pb-2 space-y-3">
+            <!-- Subtitle Text -->
+            <div class="text-sm font-bold text-center dark:text-zinc-200">
+              Would you like to connect?
             </div>
+          
+            <!-- Email Input -->
+            <form 
+            type="submit"
+            class="flex justify-center w-full">
+              <input
+                type="email"
+                placeholder="Email"
+                class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-zinc-950 placeholder-zinc-500 caret-zinc-500 outline-zinc-500 focus:outline"/>
+              <button class="cursor-pointer rounded-sm bg-zinc-500 py-2 px-4 font-bold transition-colors hover:bg-zinc-950 hover:shadow-lg hover:shadow-black/20"> 
+              Sign Up
+              </button>
+            </form> 
           </div>
-          <!-- Content Area with Flexbox for Left / Right positioning -->
-          <div class="grid grid-cols-2 gap-8 w-full">
-            <!-- Left Side: 'July 1st' text next to the gradient bar -->
-            <div class="flex w-full pl-[20px]">
-              <div class="bg-zinc-900 rounded-lg p-1 w-full max-w-[calc(100%-10px)]">
-                <h4 class="my-4">July</h4>
-              </div>
-            </div>
-
-            <!-- Right Side: Keep Empty for second occurrence -->
-            <div></div>
-        
-            <!-- Band Info: Left Side Content -->
-            <div class="text-right pr-[20px]">
-              <div class="font-bold">Women in Business</div>
-              <div class="text-zinc-400">July 12th @ 6PM</div>
-              <div class="text-zinc-400">Location TBD</div>
-            </div>
-
-            <!-- Right Side: Fourth Div -->
-             <div></div>
-            <!-- Left Side: Fifth Div -->
-             <div></div>
-
-            <!-- Right Side: Sixth Div -->
-            <div class="text-left pl-[20px]">
-              <div class="font-bold">Professional Conference</div>
-              <div class="text-zinc-400">July 21st @ 6PM</div>
-              <div class="text-zinc-400">Location TBD</div>
-            </div>
-            <!-- Left Side: 'August' text next to the gradient bar -->
-            <div class="flex w-full pl-[20px]">
-              <div class="bg-zinc-900 rounded-lg p-1 w-full max-w-[calc(100%-10px)]">
-                <h4 class="my-4">August</h4>
-              </div>
-            </div>
-
-            <!-- Right Side: Keep Empty for second occurrence -->
-            <div></div>
-
-            <!-- Left Side: Third Div -->
-            <div class="text-right pr-[20px]">
-              <div class="font-bold">Professional Conference</div>
-              <div class="text-zinc-400">August 11th @ 6PM</div>
-              <div class="text-zinc-400">Location TBD</div>
-            </div>
-
-            <!-- Right Side: Fourth Div -->
-             <div></div>
-            <!-- Left Side: Fifth Div -->
-             <div></div>
-
-            <!-- Right Side: Sixth Div -->
-            <div class="text-left pl-[20px]">
-              <div class="font-bold">Professional Conference</div>
-              <div class="text-zinc-400">August 21st @ 6PM</div>
-              <div class="text-zinc-400">Location TBD</div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Event Pricing Table on Home Page -->
-         <div class="mx-3 table w-3/4 border border-zinc-500 border-collapse">
-          <h2 class="mt-5 text-center justify-center">
-            Event Pricing
-           </h2>
-          <table class="mt-5 table w-full border border-zinc-500 border-collapse">
-            <thead class="text-lg font-bold">
-              <td class="border border-zinc-500 p-3">Event Name</td>
-              <td class="border border-zinc-500 p-3">Date</td>
-              <td class="border border-zinc-500 p-3">Location</td>
-              <td class="border border-zinc-500 p-3">Time</td>
-              <td class="border border-zinc-500 p-3">Price</td>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="border border-zinc-500 py-2 px-3">Women in Business</td>
-                <td class="border border-zinc-500 py-2 px-3">July 12th</td>
-                <td class="border border-zinc-500 py-2 px-3">Location TBD</td>
-                <td class="border border-zinc-500 py-2 px-3">6:00 PM CST</td>
-                <td class="border border-zinc-500 py-2 px-3">$25/person</td>
-              </tr>
-              <tr>
-                <td class="border border-zinc-500 py-2 px-3">Professional Conference</td>
-                <td class="border border-zinc-500 py-2 px-3">July 12th</td>
-                <td class="border border-zinc-500 py-2 px-3">Location TBD</td>
-                <td class="border border-zinc-500 py-2 px-3">6:00 PM CST</td>
-                <td class="border border-zinc-500 py-2 px-3">$25/person</td>
-              </tr>
-            </tbody>
-            <caption class="caption-bottom mt-5 mb-5">
-              Prices are subject to change based on availability.
-            </caption>
-          </table>
-        </div>
-      </div> 
-      <!-- Bottom Gradient Section -->
-      <section class="py-40 px-10 flex flex-col rounded-tlbr-full items-center justify-center bg-gradient-to-br from-rose-500 to-cyan-500">
-        <button class="btn btn-rose-500"> Subscribe </button>
+        </section>
       </section>
-      
+
+    </header>  
   </main>
 </body>
 </html>
