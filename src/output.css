@@ -722,6 +722,18 @@ h6{
   margin-top: 1.5rem;
 }
 
+.mt-8{
+  margin-top: 2rem;
+}
+
+.ml-20{
+  margin-left: 5rem;
+}
+
+.mr-20{
+  margin-right: 5rem;
+}
+
 .block{
   display: block;
 }
@@ -756,6 +768,14 @@ h6{
 
 .h-full{
   height: 100%;
+}
+
+.h-24{
+  height: 6rem;
+}
+
+.h-96{
+  height: 24rem;
 }
 
 .min-h-\[300px\]{
@@ -846,6 +866,10 @@ h6{
 
 .gap-4{
   gap: 1rem;
+}
+
+.gap-8{
+  gap: 2rem;
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]){
@@ -987,6 +1011,10 @@ h6{
 
 .pr-4{
   padding-right: 1rem;
+}
+
+.text-left{
+  text-align: left;
 }
 
 .text-center{

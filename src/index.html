@@ -30,18 +30,6 @@
         carousel.scrollLeft = carousel.scrollLeft + itemWidth;
       });
 
-      const previousTeamButton = document.getElementById("previousTeam");
-      const nextTeamButton = document.getElementById("nextTeam");
-      const carouselTeam = document.getElementById("carouselTeam")
-      previousTeamButton.addEventListener("click", () => {
-        const itemWidth = carouselTeam.getElementsByTagName("div")[0].clientWidth;
-        carouselTeam.scrollLeft = carouselTeam.scrollLeft - itemWidth;
-      });
-      nextTeamButton.addEventListener("click", () => {
-        const itemWidth = carouselTeam.getElementsByTagName("div")[0].clientWidth;
-        carouselTeam.scrollLeft = carouselTeam.scrollLeft + itemWidth;
-      });
-
       const darkModeToggle = document.getElementById("dark-mode-toggle");
       darkModeToggle.addEventListener("click", () => {
         console.log("Dark mode toggle clicked");
@@ -138,47 +126,55 @@
     
       <!-- Meet the Team -->
       <section id="About-Us"></section>
-      <section class="max-w-screen-lg mx-auto mt-20 text-black dark:text-white">
-        <h2><span class="text-[#acd1af] bg-black bg-clip-text">Meet the Team</span></h2>
+      <section class="mt-20 ml-20 mr-20 text-center text-black dark:text-white">
+        <h2><span class="text-[#acd1af] text-left bg-black bg-clip-text">Meet the Team</span></h2>
         <p>
-          Thank You for your interest! We are happy to help however we can and would love the opportunity to work with you. Learn more about us below.
+            Thank You for your interest! We are happy to help however we can and would love the opportunity to work with you. Learn more about us below.
         </p>
-        <div class="flex"> 
-          <!-- Left Arrow -->
-          <div id="previousTeam" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
-            <i class="fas fa-angle-left"></i>
-          </div>
-            <!-- Horizontal Scrolling Section -->
-          <div id="carouselTeam" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
-
+        <div class="flex gap-8 mt-8"> 
             <!-- Person 1 -->
-            <div class="min-w-[80%] md:min-w-[40%]">
-              <div style="background-image: url('./assets/images/aud.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-              <h5 class="mt-2">Audrey</h5>
-              <h6>Business, Business!</h6>
+            <div class="flex-1">
+                <div style="background-image: url('./assets/images/aud.jpg')" class="h-96 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+                <h5 class="mt-2 text-center">Audrey Vivar</h5>
+                <div class="text-left text-sm">
+                    <p class="mt-1">
+                        Audrey Vivar is an insightful philanthropic leader with over eight years of experience in aligning institutional donors with impactful program opportunities. Specializing in storytelling and strategic donor development, she empowers nonprofits to secure substantial and sustainable growth year over year.
+                    </p>
+                    <p class="mt-1">
+                        Audrey has successfully raised over $5.6 million in institutional giving and $4 million in government grants in a single fiscal year. Her accomplishments include building a corporate giving program to enhance community engagement, managing donor-driven initiatives like The Salvation Army Austin’s Angel Tree Partner program, and creating a comprehensive library of program descriptions to elevate visibility for nonprofits such as The Salvation Army Austin.
+                    </p>
+                    <p class="mt-1">
+                        A skilled project manager and strategic thinker, Audrey thrives on identifying hidden insights, crafting compelling narratives, and driving meaningful impact in Central Texas. She combines data-driven metrics with storytelling to foster community support and achieve organizational growth.
+                    </p>
+                    <p class="mt-1">
+                        A proud first-generation college graduate and native Austinite, Audrey earned her Bachelor of Science in Advertising from The University of Texas at Austin. She considers it a profound honor to serve the community she grew up in, utilizing her skills in storytelling, project management, and donor engagement to create lasting impact. Audrey is also an active member of Austin Christian Church, where she has served as a leader and mentor since 2013. She loves to read, journal, and write, but she’s equally passionate about singing karaoke with friends and exploring Austin’s vibrant food scene.
+                    </p>
+                </div>
             </div>
-
+    
             <!-- Person 2 -->
-            <div class="min-w-[80%] md:min-w-[40%]">
-              <div style="background-image: url('./assets/images/reea.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-              <h5 class="mt-2">Reeanna</h5>
-              <h6>Business Business!</h6>
+            <div class="flex-1">
+                <div style="background-image: url('./assets/images/reea.jpg')" class="h-96 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+                <h5 class="mt-2 text-center">Reeanna Jones</h5>
+                <div class="text-left text-sm">
+                    <p class="mt-1">
+                        Reeanna Jones is a strategic marketing and communications leader with over six years of experience helping nonprofits grow and create lasting impact. Specializing in strategic planning, fundraising strategy, community outreach, and program marketing, Reeanna crafts data-driven solutions that connect organizations with their communities and stakeholders.                  
+                    </p>
+                    <p class="mt-1">
+                        Her work has resulted in over $1M raised in a single Day of Giving, $50K raised during Amplify Austin, and a successful language switch for The Salvation Army to better engage diverse audiences. Reeanna has also helped organizations like Capital of Texas Team Survivors refine their social media strategy and supported KindWorks in developing its philanthropic vision.
+                    </p>
+                    <p class="mt-1">
+                        A proud MBA graduate and UT Austin alum with a degree in Human Development and Family Sciences, Reeanna has a comprehensive understanding of nonprofit operations, from fundraising to program delivery. Her MBA has helped her approach nonprofits as mission-driven businesses, ensuring both financial health and social impact.
+                    </p>
+                    <p class="mt-1">
+                        Motivated by a desire to help others, Reeanna is particularly passionate about causes such as healthcare, homelessness, food insecurity, and refugee support. Outside of work, she stays grounded through her involvement in Graduate Women in Business, children's ministry, and creative hobbies like jewelry making, crocheting, and traveling. Known for her focus on empathy, resilience, and community, Reeanna’s leadership is rooted in trust, collaboration, and continuous growth.
+                    </p>
+                </div>
             </div>
-
-            <!-- Person 3 -->
-            <div class="min-w-[80%] md:min-w-[40%]">
-              <div style="background-image: url('./assets/images/bo.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-              <h5 class="mt-2">Bowan</h5>
-              <h6>6'5"?</h6>
-            </div>
-          </div>
-          <!-- Right Arrow -->
-          <div id="nextTeam" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
-            <i class="fas fa-angle-right"></i>
-          </div>
         </div>
-      
-      </section>
+    </section>
+    
+    
 
       <!-- Business Opportunities -->
       <section id="Business"></section>
