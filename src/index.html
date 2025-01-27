@@ -44,6 +44,7 @@
 
       const darkModeToggle = document.getElementById("dark-mode-toggle");
       darkModeToggle.addEventListener("click", () => {
+        console.log("Dark mode toggle clicked");
         if(document.body.classList.contains("dark")){
           document.body.classList.remove("dark");
         }else{
@@ -54,13 +55,13 @@
   </script>
 </head>
 <body class="dark">
-  <main class="pb-40 bg-zinc-200 dark:bg-zinc-950 text-zinc-950 dark:text-zinc-200">
+  <main class="pb-40 bg-white dark:bg-black text-black dark:text-white">
     <header>
-      <button id="dark-mode-toggle" class="fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-950 dark:bg-zinc-200 text-zinc-200 dark:text-zinc-950 p-2 text-3xl z-20">
+      <button id="dark-mode-toggle" class="fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-black dark:bg-white text-white dark:text-black p-2 text-3xl z-20">
         <i class="fa-solid fa-sun dark:hidden"></i>
         <i class="fa-solid fa-moon hidden dark:inline"></i>
       </button>
-      <nav class="sticky top-0 flex bg-gradient-to-r from-zinc-900 via-zinc-600 to-zinc-200 p-2 z-10">
+      <nav class="sticky top-0 flex p-2 z-10">
         <div class="flex items-center w-full justify-between">
           <!-- Logo and Text -->
           <div class="flex items-center gap-2 pl-2">
@@ -72,27 +73,27 @@
           <!-- Mobile App (Hamburger Menu) -->
           <div class="block md:hidden ml-auto pr-4 cursor-pointer">
             <button id="mobile-menu-button" class="group peer">
-              <div class="top-0 group-open:rotate-45 group-open:top-2 relative transition-all bg-zinc-200 rounded-full w-8 h-1 group-open:"></div>
-              <div class="opacity-100 transition-all group-open:opacity-0 bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
-              <div class="top-0 group-open:-rotate-45 group-open:-top-2 relative transition-all bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
+              <div class="top-0 group-open:rotate-45 group-open:top-2 relative transition-all bg-white rounded-full w-8 h-1 group-open:"></div>
+              <div class="opacity-100 transition-all group-open:opacity-0 bg-white rounded-full w-8 h-1 mt-1"></div>
+              <div class="top-0 group-open:-rotate-45 group-open:-top-2 relative transition-all bg-white rounded-full w-8 h-1 mt-1"></div>
             </button>
-            <div class="absolute top-[62px] bg-gradient-to-r from-green-800 to-zinc-500 peer-open:block hidden w-full left-0">
-              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-zinc-800 hover:text-zinc-200 transition-colors hover:bg-white/10">
+            <div class="absolute top-[62px] bg-black peer-open:block hidden w-full left-0">
+              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-black hover:text-white transition-colors hover:bg-white/10">
                 <a href="#Home">
                   <span>Home</span>
                 </a>
               </section>
-              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-zinc-800 hover:text-zinc-200 transition-colors hover:bg-white/10">
+              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-black hover:text-white transition-colors hover:bg-white/10">
                 <a href="#About-Us">
                   <span>About Us</span>
                 </a>
               </section>
-              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-zinc-800 hover:text-zinc-200 transition-colors hover:bg-white/10">
+              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-black hover:text-white transition-colors hover:bg-white/10">
                 <a href="#Business">
                   <span>Business</span>
                 </a>
               </section>
-              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-zinc-800 hover:text-zinc-200 transition-colors hover:bg-white/10">
+              <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-black hover:text-white transition-colors hover:bg-white/10">
                 <a href="#Contact-Us">
                   <span>Contact Us</span>
                 </a>
@@ -135,8 +136,8 @@
     
       <!-- Meet the Team -->
       <section id="About-Us"></section>
-      <section class="max-w-screen-lg mx-auto mt-20 text-zinc-950 dark:text-zinc-200">
-        <h2><span class="text-transparent bg-gradient-to-r from-green-800 via-zinc-400 to-orange-200 bg-clip-text">Meet the Team</span></h2>
+      <section class="max-w-screen-lg mx-auto mt-20 text-black dark:text-white">
+        <h2><span class="text-green-800 bg-black bg-clip-text">Meet the Team</span></h2>
         <p>
           Thank You for your interest! We are happy to help however we can and would love the opportunity to work with you. Learn more about us below.
         </p>
@@ -179,8 +180,8 @@
 
       <!-- Business Opportunities -->
       <section id="Business"></section>
-      <section class="max-w-screen-lg mx-auto mt-20 text-zinc-950 dark:text-zinc-200">
-        <h2><span class="text-transparent bg-gradient-to-r from-green-800 via-zinc-400 to-orange-200 bg-clip-text">Business Opportunities</span></h2>
+      <section class="max-w-screen-lg mx-auto mt-20 text-black dark:text-white">
+        <h2><span class="text-green-800 bg-black bg-clip-text">Business Opportunities</span></h2>
         <p>
           We are happy to help however we can and would love the opportunity to work with you. Learn more about our business specialties below.
         </p>
@@ -247,7 +248,7 @@
           <button class="btn btn-green-800"> Subscribe to Emails Below </button>
           <div class="mt-6 flex flex-col items-center w-full px-4 pb-2 space-y-3">
             <!-- Subtitle Text -->
-            <div class="text-sm font-bold text-center dark:text-zinc-200">
+            <div class="text-sm font-bold text-center dark:text-white">
               Would you like to connect?
             <!-- </div> -->
                   
@@ -261,7 +262,7 @@
               <input
                 type="email"
                 placeholder="Email"
-                class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-zinc-950 placeholder-zinc-500 caret-zinc-500 outline-zinc-500 focus:outline"/>
+                class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-black placeholder-zinc-500 caret-zinc-500 outline-zinc-500 focus:outline"/>
               <button class="cursor-pointer rounded-sm bg-zinc-500 py-2 px-4 font-bold transition-colors hover:bg-zinc-950 hover:shadow-lg hover:shadow-black/20"> 
               Sign Up
               </button>
