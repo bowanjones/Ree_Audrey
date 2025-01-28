@@ -43,7 +43,7 @@
 /* Custom CSS for the Marquee Effect */
 .marquee {
     display: flex;
-    animation: marquee 20s linear infinite; /* Adjust the speed here */
+    animation: marquee 30s linear infinite; /* Adjust the speed here */
   }
   
   @keyframes marquee {
@@ -51,19 +51,8 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%); /* Scroll by the total width of the content */
+      transform: translateX(-259.35%); /* Scroll by half of the total width (after duplicating the elements) */
     }
   }
   
-  /* Tailwind utility classes for width handling */
-  .overflow-hidden {
-    overflow: hidden;
-  }
   
-  .min-w-[80%] {
-    min-width: 80%;
-  }
-  
-  .md\:min-w-[40%] {
-    min-width: 40%;
-  }
