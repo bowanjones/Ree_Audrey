@@ -18,16 +18,25 @@
         }
       });
 
-      const previousButton = document.getElementById("previous");
-      const nextButton = document.getElementById("next");
-      const carousel = document.getElementById("carousel")
-      previousButton.addEventListener("click", () => {
-        const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
-        carousel.scrollLeft = carousel.scrollLeft - itemWidth;
-      });
-      nextButton.addEventListener("click", () => {
-        const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
-        carousel.scrollLeft = carousel.scrollLeft + itemWidth;
+      // JavaScript to switch between content based on the button clicked
+      const buttons = document.querySelectorAll('.btn-switch');
+      const contentItems = document.querySelectorAll('.content-item');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const target = button.getAttribute('data-target');
+
+          // Hide all content items
+          contentItems.forEach(item => {
+            item.classList.add('hidden');
+            item.classList.remove('active');
+          });
+
+          // Show the clicked content item
+          const targetContent = document.getElementById(target);
+          targetContent.classList.remove('hidden');
+          targetContent.classList.add('active');
+        });
       });
 
       const darkModeToggle = document.getElementById("dark-mode-toggle");
@@ -55,7 +64,7 @@
           <div class="flex items-center gap-2 pl-2">
             <div class="font-bold text-2xl">
               <a href="#Home">
-                REVIVAL<span class="text-[#acd1af]"> CONSULTING</span>
+                RVIVL<span class="text-[#acd1af]"> Consulting</span>
               </a>
             </div>
           </div>
@@ -78,9 +87,14 @@
                   <span>About Us</span>
                 </a>
               </section>
+              <section class="menu-item group">
+                <a href="#Mission">
+                  <span>Mission</span>
+                </a>
+              </section>
               <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-black hover:text-white transition-colors hover:bg-white/10">
-                <a href="#Business">
-                  <span>Business</span>
+                <a href="#Expertise">
+                  <span>Expertise</span>
                 </a>
               </section>
               <section class="relative flex h-full cursor-pointer item-center justify-center p-4 font-bold text-black hover:text-white transition-colors hover:bg-white/10">
@@ -106,8 +120,13 @@
               </a>
             </section>
             <section class="menu-item group">
-              <a href="#Business">
-                <span>Business</span>
+              <a href="#Mission">
+                <span>Mission</span>
+              </a>
+            </section>
+            <section class="menu-item group">
+              <a href="#Expertise">
+                <span>Expertise</span>
               </a>
             </section>
             <section class="menu-item group">
@@ -131,141 +150,204 @@
         <p>
             Thank You for your interest! We are happy to help however we can and would love the opportunity to work with you. Learn more about us below.
         </p>
-        <div class="flex gap-8 mt-8"> 
-            <!-- Person 1 -->
-            <div class="flex-1">
-                <div style="background-image: url('./assets/images/aud.jpg')" class="h-96 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-                <h5 class="mt-2 text-center">Audrey Vivar</h5>
-                <div class="text-left text-sm">
-                    <p class="mt-1">
-                        Audrey Vivar is an insightful philanthropic leader with over eight years of experience in aligning institutional donors with impactful program opportunities. Specializing in storytelling and strategic donor development, she empowers nonprofits to secure substantial and sustainable growth year over year.
-                    </p>
-                    <p class="mt-1">
-                        Audrey has successfully raised over $5.6 million in institutional giving and $4 million in government grants in a single fiscal year. Her accomplishments include building a corporate giving program to enhance community engagement, managing donor-driven initiatives like The Salvation Army Austin’s Angel Tree Partner program, and creating a comprehensive library of program descriptions to elevate visibility for nonprofits such as The Salvation Army Austin.
-                    </p>
-                    <p class="mt-1">
-                        A skilled project manager and strategic thinker, Audrey thrives on identifying hidden insights, crafting compelling narratives, and driving meaningful impact in Central Texas. She combines data-driven metrics with storytelling to foster community support and achieve organizational growth.
-                    </p>
-                    <p class="mt-1">
-                        A proud first-generation college graduate and native Austinite, Audrey earned her Bachelor of Science in Advertising from The University of Texas at Austin. She considers it a profound honor to serve the community she grew up in, utilizing her skills in storytelling, project management, and donor engagement to create lasting impact. Audrey is also an active member of Austin Christian Church, where she has served as a leader and mentor since 2013. She loves to read, journal, and write, but she’s equally passionate about singing karaoke with friends and exploring Austin’s vibrant food scene.
-                    </p>
-                </div>
-            </div>
-    
-            <!-- Person 2 -->
-            <div class="flex-1">
-                <div style="background-image: url('./assets/images/reea.jpg')" class="h-96 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
-                <h5 class="mt-2 text-center">Reeanna Jones</h5>
-                <div class="text-left text-sm">
-                    <p class="mt-1">
-                        Reeanna Jones is a strategic marketing and communications leader with over six years of experience helping nonprofits grow and create lasting impact. Specializing in strategic planning, fundraising strategy, community outreach, and program marketing, Reeanna crafts data-driven solutions that connect organizations with their communities and stakeholders.                  
-                    </p>
-                    <p class="mt-1">
-                        Her work has resulted in over $1M raised in a single Day of Giving, $50K raised during Amplify Austin, and a successful language switch for The Salvation Army to better engage diverse audiences. Reeanna has also helped organizations like Capital of Texas Team Survivors refine their social media strategy and supported KindWorks in developing its philanthropic vision.
-                    </p>
-                    <p class="mt-1">
-                        A proud MBA graduate and UT Austin alum with a degree in Human Development and Family Sciences, Reeanna has a comprehensive understanding of nonprofit operations, from fundraising to program delivery. Her MBA has helped her approach nonprofits as mission-driven businesses, ensuring both financial health and social impact.
-                    </p>
-                    <p class="mt-1">
-                        Motivated by a desire to help others, Reeanna is particularly passionate about causes such as healthcare, homelessness, food insecurity, and refugee support. Outside of work, she stays grounded through her involvement in Graduate Women in Business, children's ministry, and creative hobbies like jewelry making, crocheting, and traveling. Known for her focus on empathy, resilience, and community, Reeanna’s leadership is rooted in trust, collaboration, and continuous growth.
-                    </p>
-                </div>
-            </div>
+        <div class="flex justify-center items-center gap-8 mt-8 max-w-screen-lg mx-auto">
+          <!-- Person 1 -->
+          <div class="flex-1">
+              <div style="background-image: url('./assets/images/aud.jpg')" class="h-96 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+          </div>
+          <div class="flex-1">
+              <h5 class="mt-2 text-center">Audrey Vivar</h5>
+              <div class="text-left text-sm">
+                  <p class="mt-1">
+                      Audrey Vivar is an insightful philanthropic leader with over eight years of experience in aligning institutional donors with impactful program opportunities. Specializing in storytelling and strategic donor development, she empowers nonprofits to secure substantial and sustainable growth year over year.
+                  </p>
+                  <p class="mt-1">
+                      Audrey has successfully raised over $5.6 million in institutional giving and $4 million in government grants in a single fiscal year. Her accomplishments include building a corporate giving program to enhance community engagement, managing donor-driven initiatives like The Salvation Army Austin’s Angel Tree Partner program, and creating a comprehensive library of program descriptions to elevate visibility for nonprofits such as The Salvation Army Austin.
+                  </p>
+                  <p class="mt-1">
+                      A skilled project manager and strategic thinker, Audrey thrives on identifying hidden insights, crafting compelling narratives, and driving meaningful impact in Central Texas. She combines data-driven metrics with storytelling to foster community support and achieve organizational growth.
+                  </p>
+                  <p class="mt-1">
+                      A proud first-generation college graduate and native Austinite, Audrey earned her Bachelor of Science in Advertising from The University of Texas at Austin. She considers it a profound honor to serve the community she grew up in, utilizing her skills in storytelling, project management, and donor engagement to create lasting impact. Audrey is also an active member of Austin Christian Church, where she has served as a leader and mentor since 2013. She loves to read, journal, and write, but she’s equally passionate about singing karaoke with friends and exploring Austin’s vibrant food scene.
+                  </p>
+              </div>
+          </div>
         </div>
-    </section>
+        
+        <div class="flex justify-center items-center gap-8 mt-8 max-w-screen-lg mx-auto">
+          <!-- Person 2 -->
+          <div class="flex-1">
+              <div style="background-image: url('./assets/images/reea.jpg')" class="h-96 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+          </div>
+          <div class="flex-1">
+              <h5 class="mt-2 text-center">Reeanna Jones</h5>
+              <div class="text-left text-sm">
+                <p class="mt-1">
+                  Reeanna Jones is a strategic marketing and communications leader with over six years of experience helping nonprofits grow and create lasting impact. Specializing in strategic planning, fundraising strategy, community outreach, and program marketing, Reeanna crafts data-driven solutions that connect organizations with their communities and stakeholders.                  
+              </p>
+              <p class="mt-1">
+                  Her work has resulted in over $1M raised in a single Day of Giving, $50K raised during Amplify Austin, and a successful language switch for The Salvation Army to better engage diverse audiences. Reeanna has also helped organizations like Capital of Texas Team Survivors refine their social media strategy and supported KindWorks in developing its philanthropic vision.
+              </p>
+              <p class="mt-1">
+                  A proud MBA graduate and UT Austin alum with a degree in Human Development and Family Sciences, Reeanna has a comprehensive understanding of nonprofit operations, from fundraising to program delivery. Her MBA has helped her approach nonprofits as mission-driven businesses, ensuring both financial health and social impact.
+              </p>
+              <p class="mt-1">
+                  Motivated by a desire to help others, Reeanna is particularly passionate about causes such as healthcare, homelessness, food insecurity, and refugee support. Outside of work, she stays grounded through her involvement in Graduate Women in Business, children's ministry, and creative hobbies like jewelry making, crocheting, and traveling. Known for her focus on empathy, resilience, and community, Reeanna’s leadership is rooted in trust, collaboration, and continuous growth.
+              </p>
+              </div>
+          </div>
+        </div>
+      </section>
     
-    
+      <!-- Main Mission -->
+      <section id="Mission"></section>
+      <section class="max-w-screen-lg text-center mx-auto mt-20 text-black dark:text-white">
+        <h2><span class="text-[#acd1af] text-left bg-black bg-clip-text">Mission, Vision, Culture</span></h2>
+        <div class="flex-1 gap-8 mt-8">
+          <!-- Mission -->
+          <h5 class="mt-2 text-left">Mission
+            <h6 class="text-left text-sm mt-1">
+                  At RVIVL Consulting, we empower nonprofits and social impact businesses to thrive through expert guidance, tailored solutions, and a commitment to measurable results. Rooted in Christian values, we prioritize integrity, compassion, and service, treating your mission as our own to create lasting, positive change together.
+            </h6>
+          </h5>
+          <!-- Proven Expertise -->
+          <h5 class="mt-2 text-left">Proven Expertise with Nonprofits & Small Businesses
+            <h6 class="text-left text-sm mt-1">
+                  We have hands-on experience working with a wide range of nonprofits and small businesses. From strategic planning and fundraising to operations and sustainability, we are well-versed in what it takes to help your organization thrive.
+            </h6>
+          </h5>
+          <!-- Results-Driven & Impact-Focused -->
+          <h5 class="mt-2 text-left">Results-Driven & Impact-Focused
+            <h6 class="text-left text-sm mt-1">
+              We care deeply about delivering tangible results. Your success is our success, and we are driven by measurable outcomes that create lasting, positive change. We take a hands-on, collaborative approach to ensure that every strategy we implement aligns with your vision and leads to real impact.            </h6>
+          </h5>
+          <!-- We Treat Your Organization Like Our Own -->
+          <h5 class="mt-2 text-left">We Treat Your Organization Like Our Own
+            <h6 class="text-left text-sm mt-1">
+              We are fully invested in your mission. When you partner with us, we act as an extension of your team, providing personalized solutions and thoughtful guidance. Your challenges are our challenges, and your wins are our wins.          </h5>
+        </div>
+      </section>
 
-      <!-- Business Opportunities -->
-      <section id="Business"></section>
+
+<!-- Main Mission -->
+<section id="Mission"></section>
+<section class="max-w-screen-lg text-center mx-auto mt-20 text-black dark:text-white">
+  <h2><span class="text-[#acd1af] text-left bg-black bg-clip-text">Mission, Vision, Culture</span></h2>
+
+  <!-- Buttons Section -->
+  <div class="flex justify-center gap-8 mt-4 mb-8">
+    <button class="btn-switch" data-target="mission">Mission</button>
+    <button class="btn-switch" data-target="vision">Vision</button>
+    <button class="btn-switch" data-target="culture">Culture</button>
+  </div>
+
+  <!-- Content Box -->
+  <div class="content-box p-6 border rounded-lg shadow-md">
+    <div id="mission" class="content-item">
+      <h5 class="mt-2 text-left">Mission</h5>
+      <h6 class="text-left text-sm mt-1">
+        At RVIVL Consulting, we empower nonprofits and social impact businesses to thrive through expert guidance, tailored solutions, and a commitment to measurable results. Rooted in Christian values, we prioritize integrity, compassion, and service, treating your mission as our own to create lasting, positive change together.
+      </h6>
+    </div>
+    <div id="vision" class="content-item hidden">
+      <h5 class="mt-2 text-left">Vision</h5>
+      <h6 class="text-left text-sm mt-1">
+        Our vision is to create a world where nonprofits and small businesses are equipped to thrive, creating impactful solutions for their communities. We aim to foster long-term growth and sustainability through innovation and collaboration.
+      </h6>
+    </div>
+    <div id="culture" class="content-item hidden">
+      <h5 class="mt-2 text-left">Culture</h5>
+      <h6 class="text-left text-sm mt-1">
+        We value a collaborative, inclusive, and innovative work culture. Our team believes in the power of relationships, both within our organization and with our clients, to drive success and positive change.
+      </h6>
+    </div>
+  </div>
+</section>
+
+
+      <!-- Expertise -->
+      <section id="Expertise"></section>
       <section class="max-w-screen-lg mx-auto mt-20 text-black dark:text-white">
-        <h2><span class="text-[#acd1af] bg-black bg-clip-text">Business Opportunities</span></h2>
+        <h2><span class="text-[#acd1af] bg-black bg-clip-text">Business Expertise</span></h2>
         <p>
           We are happy to help however we can and would love the opportunity to work with you. Learn more about our business specialties below.
         </p>
-        <div class="flex"> 
-          <!-- Left Arrow -->
-          <div id="previous" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
-            <i class="fas fa-angle-left"></i>
-          </div>
-            <!-- Horizontal Scrolling Section -->
-          <div id="carousel" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
+      
+        <!-- Wrapper for the scroll animation -->
+        <div class="overflow-hidden relative">
+          <div class="marquee flex">
             <!-- Marketing Section -->
             <div class="min-w-[80%] md:min-w-[40%]">
               <div style="background-image: url('./assets/images/marketing.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
               <h5 class="mt-2">Marketing</h5>
               <h6>Need help with your marketing campaign or media posts?</h6>
             </div>
-
+      
             <!-- Events -->
             <div class="min-w-[80%] md:min-w-[40%]">
               <div style="background-image: url('./assets/images/events.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
               <h5 class="mt-2">Events</h5>
               <h6>Need help planning a large event?</h6>
             </div>
-
+      
             <!-- Nonprofit -->
             <div class="min-w-[80%] md:min-w-[40%]">
               <div style="background-image: url('./assets/images/nonprofit.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
               <h5 class="mt-2">Nonprofit</h5>
               <h6>We're here for you!</h6>
             </div>
-
+      
             <!-- Corporate Strategy -->
             <div class="min-w-[80%] md:min-w-[40%]">
               <div style="background-image: url('./assets/images/corporate strategy.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
               <h5 class="mt-2">Corporate Strategy</h5>
               <h6>Let us help you achieve your goals!</h6>
             </div>
-
+      
             <!-- Grants -->
             <div class="min-w-[80%] md:min-w-[40%]">
               <div style="background-image: url('./assets/images/grants.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
               <h5 class="mt-2">Grants</h5>
               <h6>Need funding but don't know where to begin?</h6>
             </div>
-
+      
             <!-- Technology -->
             <div class="min-w-[80%] md:min-w-[40%]">
               <div style="background-image: url('./assets/images/technology.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
               <h5 class="mt-2">Technology</h5>
               <h6>Want a website but don't know how to start?</h6>
             </div>
+            
+            <!-- Repeat for infinite effect -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/marketing.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Marketing</h5>
+              <h6>Need help with your marketing campaign or media posts?</h6>
+            </div>
+      
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <div style="background-image: url('./assets/images/events.jpg')" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Events</h5>
+              <h6>Need help planning a large event?</h6>
+            </div>
+      
+            <!-- Add more sections as needed -->
           </div>
-          <!-- Right Arrow -->
-          <div id="next" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-12">
-            <i class="fas fa-angle-right"></i>
-          </div>  
         </div>
       </section>
+      
 
       <!-- Subtitle and Email Input Section (Separate from the blurred background) -->
       <section id="Contact-Us">
         <!-- Bottom Gradient Section -->
-        <section class="py-40 px-10 flex flex-col rounded-tlbr-full items-center justify-center bg-gradient-to-br from-green-800 to-orange-200">
+        <section class="py-60 px-20 flex flex-col rounded-tlbr-full items-center justify-center bg-gradient-to-br from-green-800 to-orange-200">
           <button class="btn btn-green-800"> Subscribe to Emails Below </button>
           <div class="mt-6 flex flex-col items-center w-full px-4 pb-2 space-y-3">
             <!-- Subtitle Text -->
             <div class="text-sm font-bold text-center dark:text-white">
               Would you like to connect?
-            <!-- </div> -->
-                  
-            <!-- Embed Google Form -->
-            <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScHkZGdr1DoVGE5RAACqFV1ceCubkHqvv_hqVJIZ77yCKWeTg/viewform?embedded=true" width="640" height="586" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
-          
-            <!-- Email Input -->
-            <!-- <form 
-            type="submit"
-            class="flex justify-center w-full">
-              <input
-                type="email"
-                placeholder="Email"
-                class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-black placeholder-zinc-500 caret-zinc-500 outline-zinc-500 focus:outline"/>
-              <button class="cursor-pointer rounded-sm bg-zinc-500 py-2 px-4 font-bold transition-colors hover:bg-zinc-950 hover:shadow-lg hover:shadow-black/20"> 
-              Sign Up
-              </button>
-            </form>  -->
-          <!-- </div> -->
+            </div>
+          </div>
         </section>
       </section>
 

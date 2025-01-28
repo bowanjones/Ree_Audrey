@@ -661,10 +661,6 @@ h6{
   position: sticky;
 }
 
-.-top-12{
-  top: -3rem;
-}
-
 .left-0{
   left: 0px;
 }
@@ -698,8 +694,16 @@ h6{
   margin-right: auto;
 }
 
+.ml-20{
+  margin-left: 5rem;
+}
+
 .ml-auto{
   margin-left: auto;
+}
+
+.mr-20{
+  margin-right: 5rem;
 }
 
 .mt-1{
@@ -714,10 +718,6 @@ h6{
   margin-top: 5rem;
 }
 
-.mt-4{
-  margin-top: 1rem;
-}
-
 .mt-6{
   margin-top: 1.5rem;
 }
@@ -726,12 +726,12 @@ h6{
   margin-top: 2rem;
 }
 
-.ml-20{
-  margin-left: 5rem;
+.mb-8{
+  margin-bottom: 2rem;
 }
 
-.mr-20{
-  margin-right: 5rem;
+.mt-4{
+  margin-top: 1rem;
 }
 
 .block{
@@ -762,20 +762,16 @@ h6{
   height: 20rem;
 }
 
+.h-96{
+  height: 24rem;
+}
+
 .h-\[calc\(120vh-200px\)\]{
   height: calc(120vh - 200px);
 }
 
 .h-full{
   height: 100%;
-}
-
-.h-24{
-  height: 6rem;
-}
-
-.h-96{
-  height: 24rem;
 }
 
 .min-h-\[300px\]{
@@ -832,10 +828,6 @@ h6{
   cursor: pointer;
 }
 
-.snap-x{
-  scroll-snap-type: x var(--tw-scroll-snap-strictness);
-}
-
 .snap-center{
   scroll-snap-align: center;
 }
@@ -864,10 +856,6 @@ h6{
   gap: 0.5rem;
 }
 
-.gap-4{
-  gap: 1rem;
-}
-
 .gap-8{
   gap: 2rem;
 }
@@ -878,12 +866,8 @@ h6{
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
-.overflow-x-auto{
-  overflow-x: auto;
-}
-
-.scroll-smooth{
-  scroll-behavior: smooth;
+.overflow-hidden{
+  overflow: hidden;
 }
 
 .rounded-full{
@@ -896,6 +880,10 @@ h6{
 
 .rounded-xl{
   border-radius: 0.75rem;
+}
+
+.rounded-lg{
+  border-radius: 0.5rem;
 }
 
 .rounded-l-lg{
@@ -973,6 +961,10 @@ h6{
   padding: 1rem;
 }
 
+.p-6{
+  padding: 1.5rem;
+}
+
 .px-10{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -993,16 +985,22 @@ h6{
   padding-bottom: 10rem;
 }
 
+.px-20{
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.py-60{
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+
 .pb-2{
   padding-bottom: 0.5rem;
 }
 
 .pb-40{
   padding-bottom: 10rem;
-}
-
-.pb-5{
-  padding-bottom: 1.25rem;
 }
 
 .pl-2{
@@ -1029,11 +1027,6 @@ h6{
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-sm{
@@ -1136,6 +1129,39 @@ h6{
 
 #carousel, #carouselTeam {
   overflow-x: hidden;
+}
+
+/* Custom CSS for the Marquee Effect */
+
+.marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  /* Adjust the speed here */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+    /* Scroll by the total width of the content */
+  }
+}
+
+/* Tailwind utility classes for width handling */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.min-w-[80%] {
+  min-width: 80%;
+}
+
+.md\:min-w-[40%] {
+  min-width: 40%;
 }
 
 .hover\:bg-white\/10:hover{
