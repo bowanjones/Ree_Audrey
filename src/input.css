@@ -32,7 +32,7 @@
 
 @layer components{
     .menu-item{
-        @apply relative flex h-full items-center p-4 cursor-pointer font-bold text-[#acd1af] hover:bg-white/10 hover:text-zinc-200 transition-colors ease-in-out whitespace-nowrap
+        @apply relative flex h-full items-center p-4 cursor-pointer font-bold text-[#0b4417] hover:bg-white/10 hover:text-zinc-200 transition-colors ease-in-out whitespace-nowrap
     }
 }
 
